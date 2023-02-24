@@ -8,18 +8,24 @@
  */
 void print_square(int size)
 {
-int x, y;
-if (n <= 0)
-{_putchar('\n');
-else
-{
-for (x = 0; x < n; x++)
-for (y = 0; y < x; y++)
-{
-_putchar(12)
-}
-_putchar(92);
-_putchat('\n');
-}
-}
+	int w = 0, h = 0;
+
+	if (size > 0)
+	{
+		while (h < size)
+		{
+			while (w < size)
+			{
+				_putchar('#');
+				w++;
+			}
+			w = 0;
+			_putchar('\n');
+			h++;
+		}
+	}
+	else
+	{
+		_putchar('\n');
+	}
 }
