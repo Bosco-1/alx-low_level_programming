@@ -1,27 +1,27 @@
 #include "main.h"
 
 /**
- * _strpbrk - this function returns a pointer
- * to the first occurence of a character from *accept in *s
- * @s: reference string pointer
- * @accept: search key
- * Return: pointer to first appearance
+ * _strpbrk - Searches a string for any of a set of bytes.
+ * @s: The string to be searched.
+ * @accept: The set of bytes to be searched for.
+ *
+ * Return: If a set is matched - a pointer to the matched byte.
+ *         If no set is matched - NULL.
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int  a;
+	int index;
 
 	while (*s)
 	{
-		a = 0;
-		while (accept[a] != '\0')
+		for (index = 0; accept[index]; index++)
 		{
-			if (*s == accept[a])
-			{
+			if (*s == accept[index])
 				return (s);
-			}
 		}
+
 		s++;
 	}
-	return (NULL);
+
+	return ('\0');
 }
